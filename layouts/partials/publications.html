@@ -1,0 +1,29 @@
+{{ $publications := .Site.Data.publications }}
+
+{{ $items_type := $publications.page_type | default "publications" }}
+{{ $items_count := $publications.count | default 65535 }}
+{{ $items_sort := $publications.order| default "desc" }}
+
+{{ $section := .Site.GetPage "section" "publications" }}
+
+{{/* Query */}}
+{{ $query := where site.RegularPages "Type" $items_type }}
+
+{{/* Sort */}}
+{{ $sort_by := "Date" }}
+{{ $query = sort $query $sort_by $items_sort }}
+
+{{/* Limit */}}
+{{ $query = first $items_count $query }}
+
+<section class="{{ $publications.color }}">
+  <h2 class="heading">{{ $publications.title }}</h2>
+
+  <div class="row justify-content-md-center">
+    <div class="col-12">
+      {{ range $query }}
+        {{ partial "pub-card.html" (dict "item" . "truncate" $publications.truncateHome) }}
+      {{ end }}
+    </div>
+  </div>
+</section>

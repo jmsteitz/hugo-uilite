@@ -1,0 +1,25 @@
+{{ define "content" }}
+
+<!-- {{ $resource := ( .Resources.ByType "image").GetMatch "*featured*" }} -->
+<!-- {{ $resource := index ( .Resources.ByType "image" ) 0 }} -->
+
+<div class="mt-4">
+  <article class="row no-gutters">
+    <div class="col-12 col-lg-6">
+      {{ if $img := .Resources.GetMatch "image" }}
+        <img src="{{ $img.RelPermalink }}" class="mx-auto d-block" alt="{{ $img.Title }}">
+      {{ end }}
+    </div>
+    <div class="col-12 col-lg-6 px-4 mt-4 mt-lg-0">
+        <h1 class="heading">{{ .Title }}</h1>
+          {{ .Content }}
+    </div>
+  </article>
+</div>
+
+<div class="text-center my-5">
+  <a class="text-dark" href="javascript:history.back()">&#x21A4; Back</a>
+</div>
+
+
+{{ end }}

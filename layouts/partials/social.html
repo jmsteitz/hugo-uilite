@@ -1,0 +1,13 @@
+{{ $social := .Site.Data.social }}
+
+{{ range $key, $value := $social.brands }}
+  <a target="_blank" href="{{ $value }}" {{ if not $.IsHome }}class="nav-link text-dark"{{ end }}>
+    <i class="fab fa-{{ $key }}"></i>
+  </a>
+{{ end }}
+
+{{ range $key, $value := $social.solid }}
+  <a target="_blank" href="{{ $value }}" {{ if not $.IsHome }}class="nav-link text-dark"{{ end }}>
+    <i class="fas fa-{{ $key }}"></i>
+  </a>
+{{ end }}

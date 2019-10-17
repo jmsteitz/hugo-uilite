@@ -1,0 +1,10 @@
+{{ $config := .Site.Data.config }}
+
+<address>
+<script>document.writeln(decrypt('{{ $config.address }}'));</script>
+</address>
+
+<address>
+T: &nbsp;&nbsp;<script>document.writeln(decrypt('{{ $config.telephone }}'));</script><br>
+M: &nbsp;<a class="text-body text-decoration-none" href="javascript:openCryptLink('{{ $config.email }}');"><script>document.writeln(decrypt('{{ $config.email }}'));</script></a>
+</address>

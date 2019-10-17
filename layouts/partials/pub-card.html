@@ -1,0 +1,24 @@
+{{/*
+  call with: {{ partial "pub-card.html" (dict "item" . "truncate" "number")}}
+*/}}
+
+
+<div class="card pb-3">
+  <div class="card-body">
+    <a href="{{ .item.RelPermalink }}">
+      <h5 class="card-title text-dark">{{ .item.Title }}</h5>
+    </a>
+    <a href="{{ .item.RelPermalink }}">
+      <p class="card-subtitle text-muted">
+        {{ delimit .item.Params.authors ", " ", and " }}<br>
+        {{ if .item.Params.conference }}In {{ end }}<em>{{ .item.Params.publishedIn }}</em>, {{ .item.Params.year }}
+      </p>
+    </a>
+    <a href="{{ .item.RelPermalink }}">
+      <div class="card-text text-body">
+        {{ .item.Content | truncate .truncate }}
+      </div>
+    </a>
+    {{ partial "pub-buttons.html" .item }}
+  </div>
+</div>

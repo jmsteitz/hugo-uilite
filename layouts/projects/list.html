@@ -1,0 +1,18 @@
+{{ define "content" }}
+
+{{ $projects := .Site.Data.projects }}
+{{ $query := where site.RegularPages "Type" "projects" }}
+
+<section class="pt-5">
+  <div class="container">
+    <h1 class="text-center py-4">{{ $projects.title }}</h1>
+
+    <div class="row">
+      {{ range $query }}
+        {{ partial "card.html" (dict "item" . "home" false ) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,2 +1,5 @@
 .DS_Store
 exampleSite/themes
+vendor/
+static/webfonts
+/node_modules/

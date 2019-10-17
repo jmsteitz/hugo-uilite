@@ -1,0 +1,20 @@
+{{ define "content" }}
+
+{{ $publications := .Site.Data.publications }}
+{{ $query := where site.RegularPages "Type" "publications" }}
+
+<div class="pt-5">
+  <div class="container px-4">
+    <h1 class="text-center py-4">{{ $publications.title }}</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+      {{ range $query }}
+        {{ partial "pub-card.html" (dict "item" . "truncate" $publications.truncateList) }}
+      {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

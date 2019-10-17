@@ -1,0 +1,31 @@
+{{ $projects := .Site.Data.projects }}
+
+{{ $items_type := $projects.page_type | default "projects" }}
+{{ $items_count := $projects.count | default 65535 }}
+{{ $items_sort := $projects.order| default "desc" }}
+
+{{ $section := .Site.GetPage "section" "projects" }}
+
+{{/* Query */}}
+{{ $query := where (where site.RegularPages "Type" $items_type) "Params.featured" true }}
+
+{{/* Sort */}}
+{{ $sort_by := "Date" }}
+{{ $query = sort $query $sort_by $items_sort }}
+
+{{/* Limit */}}
+{{ $query = first $items_count $query }}
+
+<section class="{{ $projects.color }}">
+  <h2 class="heading">{{ $projects.title }}</h2>
+
+  <div class="row">
+    {{ range $query }}
+      {{ partial "card.html" (dict "item" . "home" true ) }}
+    {{ end }}
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ $section.RelPermalink }}" class="btn btn-lg btn-dark-faded">Browse All</a>
+  </div>
+</section>

@@ -1,33 +1,20 @@
 {{ $sidebar := .Site.Data.sidebar }}
-{{ $social := .Site.Data.social }}
-{{ $socialfas := .Site.Data.socialfas}}
 
 <section id="sidebar" class="sidebar d-flex align-items-center p-5">
   <div class="main-info">
 
-    <img src="{{.Site.BaseURL}}images/{{ $sidebar.displayPicture }}" class="rounded-circle mb-3" width="160px">
+    <img src="{{.Site.BaseURL}}{{ $sidebar.displayPicture }}" class="rv rounded-circle mb-3" width="160px">
 
-    <h1 class="heading">{{ $sidebar.title }} <span class="highlight">{{ $sidebar.highlightedText }}</span></h1>
-    <p class="text-muted">{{ $sidebar.description }}</p>
+    <h1 class="rv heading">{{ $sidebar.title }} <span class="rv highlight">{{ $sidebar.highlightedText }}</span></h1>
+    <p class="rv text-muted">{{ $sidebar.description }}</p>
 
-    <div class="social my-4">
-
-      {{ range $key, $value := $social }}
-        <a target="_blank" href="{{ $value }}" rel="me">
-          <i class="fab fa-{{ $key }}"></i>
-        </a>
-      {{ end }}
-
-      {{ range $key, $value := $socialfas }}
-        <a target="_blank" href="{{ $value }}">
-          <i class="fas fa-{{ $key }}"></i>
-        </a>
-      {{ end }}
-
+    <div class="rv my-4">
+      <span class="social">
+        {{ partial "social.html" . }}
+      </span>
     </div>
 
-    <a href="#contact" class="btn btn-dark btn-lg">Contact</a>
-
+    <a href="#contact" class="rv btn btn-dark btn-lg">Contact</a>
 
   </div>
 </section>

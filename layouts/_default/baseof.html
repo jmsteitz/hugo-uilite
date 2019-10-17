@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body class="clearfix">
+    {{ if .IsHome }}
+      {{ partial "sidebar.html" . }}
+    {{ else }}
+      {{ partial "navbar.html" . }}
+    {{ end }}
+
+    {{ block "content" . }}
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+    {{ partial "citation.html" . }}
+  </body>
+
+  {{ partial "footer-scripts.html" . }}
+
+</html>

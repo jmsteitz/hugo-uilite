@@ -1,5 +1,9 @@
-{{ $footer := .Site.Data.footer }}
-
-<footer class="text-center text-muted py-4">
-  {{ $footer.text }}
+<footer class="text-center text-uppercase pt-3 pb-4">
+  <ul class="p-0">
+  {{ range .Site.Menus.footer }}
+    <li class="d-inline">
+      <a class="text-muted small px-2" href="{{ .URL }}">{{ .Name }}</a>
+    </li>
+  {{ end }}
+  </ul>
 </footer>

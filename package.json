@@ -1,0 +1,26 @@
+{
+  "name": "uilite-theme",
+  "version": "1.0.0",
+  "description": "uilite hugo theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmsteitz/hugo-uilite.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmsteitz/hugo-uilite/issues"
+  },
+  "homepage": "https://github.com/jmsteitz/hugo-uilite#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "simple-crypto-js": "^2.2.0"
+  }
+}
