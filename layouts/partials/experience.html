@@ -12,9 +12,8 @@
         <h6 class="h3 my-2">{{ $element.company }}</h6>
         {{ $website := $element.website }}
         {{ if $website }}
-        <a target="_blank" href="{{ $website }}">
-          <i class="fas fa-link"></i>
-          {{ $website }}
+        <a target="_blank" href="{{ $website }}" class="text-dark">
+          <i class="fas fa-link"></i>&nbsp;{{ $website }}
         </a>
         {{ end }}
         <p class="">{{ $element.description }}</p>

@@ -14,6 +14,12 @@
     {{ block "content" . }}
     {{ end }}
 
+    {{ if not (.Page.IsHome) }}
+      <div class="text-center my-5">
+        <a class="text-dark" href="javascript:history.back()">&#x21A4; Back</a>
+      </div>
+    {{ end }}
+
     {{ partial "footer.html" . }}
     {{ partial "citation.html" . }}
   </body>

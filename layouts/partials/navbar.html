@@ -3,12 +3,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 px-4">
   <a class="primaryMenu navbar-brand p-0 active" href="{{ .Site.BaseURL }}">
     <img src="{{.Site.BaseURL}}{{ $sidebar.displayPicture }}" alt="" class="rounded-circle mr-2">
-    <span class="heading text-body d-inline-block align-middle">{{ $sidebar.highlightedText }}</span>
+    <span class="heading text-body d-inline-block align-middle">
+      {{ $sidebar.highlightedTextShort | default $sidebar.highlightedText }}
+    </span>
   </a>
 
   <div class="secondaryMenu px-4 pr-5 pr-lg-4 bg-white">
+    {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
+      {{ if not ($currentPage.IsMenuCurrent "main" .) }}
       <a class="align-middle" href="{{ .URL }}"><span class="heading d-inline-block mb-0 text-body">{{ .Name }}</span></a>
+      {{ end }}
     {{ end }}
   </div>
 

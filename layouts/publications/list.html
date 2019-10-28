@@ -1,7 +1,8 @@
 {{ define "content" }}
 
 {{ $publications := .Site.Data.publications }}
-{{ $query := where site.RegularPages "Type" "publications" }}
+{{ $items_type := $publications.page_type | default "publications" }}
+{{ $query := where site.RegularPages "Type" $items_type }}
 
 <div class="pt-5">
   <div class="container px-4">

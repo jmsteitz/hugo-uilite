@@ -1,17 +1,39 @@
 {{ $config := .Site.Data.config }}
 
 <section id="contact" class="bg-light d-flex align-items-center" style="height: 100vh;">
-  <div class="container">
-    <h2 class="heading mb-4">Contact</h2>
+  <div class="container pt-md-5 px-0">
+    <h2 class="heading py-4">Contact</h2>
 
     <address>
       <script>document.writeln(decrypt('{{ $config.address }}'));</script>
     </address>
 
-    <address>
-      T: &nbsp;&nbsp;<script>document.writeln(decrypt('{{ $config.telephone }}'));</script><br>
-      M: &nbsp;<a class="text-body" href="javascript:openCryptLink('{{ $config.email }}');"><script>document.writeln(decrypt('{{ $config.email }}'));</script></a>
+    <address class="pb-5">
+      <div>
+        <i class="fas fa-phone"></i>
+        <script>document.writeln(decrypt('{{ $config.telephone }}'));</script>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <a class="text-body" href="javascript:openCryptLink('{{ $config.email }}');">
+          <script>document.writeln(decrypt('{{ $config.email }}'));</script>
+        </a>
+      </div>
+      <div>
+        <i class="d-inline-block fas fa-key"></i>
+        <a href="{{ $config.pgplink }}" class="code d-inline-block text-body text-monospace align-bottom">
+          {{ $config.pgpfingerprint | safeHTML }}
+        </a>
+      </div>
     </address>
 
+
+
+    <div class="text-center py-5">
+      <a id="top-btn" class="text-center text-dark text-muted" href="#">
+        <div aria-hidden="true" class="fas fa-angle-up"></div>
+        <span class="sr-only">Back-to-top</span>
+      </a>
+    </div>
   </div>
 </section>

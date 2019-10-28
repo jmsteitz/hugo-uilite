@@ -64,9 +64,16 @@ $(document).ready(function() {
 
     scrollTo($.attr(this, "href"));
   });
+
+  $("#top-btn").on("click", function (event) {
+    event.preventDefault();
+    $('body,html').animate({
+        scrollTop: 0
+    }, 500, function() { location.hash = ''; });
+  });
 });
 
-// from hugo-academic theme
+// from hugo-academic theme: https://github.com/gcushen/hugo-academic
 // Load citation modal on 'Cite' click.
 $('.js-cite-modal').click(function(e) {
   e.preventDefault();

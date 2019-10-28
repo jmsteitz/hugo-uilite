@@ -4,13 +4,13 @@
 
 <div class="col-lg-4 col-md-4 col-12 mb-3">
   <div class="card {{ if .home }}p-4{{ end }}">
-    <a class="mb-3" href="{{ .item.RelPermalink }}">
+    <a class="mb-2" href="{{ .item.RelPermalink }}">
 		{{ if $img := .item.Resources.GetMatch "previewimage" }}
       		<img class="rounded border" src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}" {{ with $pos := $img.Params.position }}style="object-position: {{ $pos }};"{{ end }}>
 		{{ else if $img := .item.Resources.GetMatch "image" }}
 			<img class="rounded border" src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}" {{ with $pos := $img.Params.position }}style="object-position: {{ $pos }};"{{ end }}>
 		{{ else }}
-			<div class="placeholder rounded bg-light"></div>
+			<div class="placeholder rounded"></div>
 		{{ end }}
     </a>
 

@@ -1,8 +1,8 @@
 {{ range .Params.buttons }}
-    <a href="{{ .url }}" class="btn btn-dark-faded btn-sm">{{ .name }}</a>
+    <a target="_blank" href="{{ .url }}" class="btn btn-dark-faded btn-sm">{{ .name }}</a>
 {{ end}}
 {{ with $poster := .Resources.GetMatch "poster" }}
-    <a href="{{ $poster.RelPermalink }}" class="btn btn-dark-faded btn-sm">Poster</a>
+    <a target="_blank" href="{{ $poster.RelPermalink }}" class="btn btn-dark-faded btn-sm">Poster</a>
 {{ end }}
 {{ with $res := .Resources.GetMatch "*.bib" }}
     <button type="button" class="btn btn-dark-faded btn-sm js-cite-modal" data-filename="{{ $res.RelPermalink }}">Cite</button>
