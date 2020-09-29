@@ -1,7 +1,8 @@
 {{ $config := .Site.Data.config }}
 
 <address>
-<script>document.writeln(decrypt('{{ $config.address }}'));</script>
+{{ $config.author }}
+{{/* <script>document.writeln(decrypt('{{ $config.address }}'));</script> */}}
 </address>
 
 <address>
