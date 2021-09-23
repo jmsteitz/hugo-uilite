@@ -3,7 +3,7 @@
 */}}
 
 
-<div class="card pb-3">
+<div class="card mb-3">
   <div class="card-body">
     <a href="{{ .item.RelPermalink }}">
       <h5 class="card-title text-dark">{{ .item.Title }}</h5>
@@ -11,7 +11,7 @@
     <a href="{{ .item.RelPermalink }}">
       <p class="card-subtitle text-muted">
         {{ delimit .item.Params.authors ", " ", and " }}<br>
-        {{ if .item.Params.conference }}In {{ end }}<em>{{ .item.Params.publishedIn }}</em>, {{ .item.Params.year }}
+        {{ if .item.Params.preprint }}(to appear) {{ end }}{{ if .item.Params.conference }}In {{ end }}<em>{{ .item.Params.publishedIn }}</em>, {{ .item.Params.year }}
       </p>
     </a>
     <a href="{{ .item.RelPermalink }}">

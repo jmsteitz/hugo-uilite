@@ -7,7 +7,7 @@
         <h2 class="text-center pt-4">{{ .Title }}</h2>
         <small class="text-center text-muted d-block pb-3">
           {{ delimit .Params.authors ", " ", and " }}<br>
-          {{ if .Params.conference }}In {{ end }}<em>{{ .Params.publishedIn }}</em>, {{ .Params.year }}
+          {{ if .Params.preprint }}(to appear) {{ end }}{{ if .Params.conference }}In {{ end }}<em>{{ .Params.publishedIn }}</em>, {{ .Params.year }}
         </small>
         <h5>Abstract</h5>
         <div class="content">{{ .Content }}</div>
