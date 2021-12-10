@@ -1,5 +1,5 @@
 {{/*
-  call with: {{ partial "pub-card.html" (dict "item" . "truncate" "number")}}
+  call with: {{ partial "pub-card.html" (dict "item" . "truncate" "number") }}
 */}}
 
 
@@ -10,8 +10,7 @@
     </a>
     <a href="{{ .item.RelPermalink }}">
       <p class="card-subtitle text-muted">
-        {{ delimit .item.Params.authors ", " ", and " }}<br>
-        {{ if .item.Params.preprint }}(to appear) {{ end }}{{ if .item.Params.conference }}In {{ end }}<em>{{ .item.Params.publishedIn }}</em>, {{ .item.Params.year }}
+        {{ partial "pub-info.html" .item }}
       </p>
     </a>
     <a href="{{ .item.RelPermalink }}">

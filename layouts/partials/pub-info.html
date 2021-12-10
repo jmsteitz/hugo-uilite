@@ -1,0 +1,5 @@
+{{ delimit .Params.authors ", " ", and " }},<br>
+{{ if .Params.preprint }}to appear{{ end }}
+{{ if .Params.conference }}in{{ end }}
+<em>{{ .Params.publishedIn }}</em>,
+{{ .Params.year }}{{ if .Params.award }}, <b>{{ .Params.award }}</b>{{ end }}.
