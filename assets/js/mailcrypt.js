@@ -1,4 +1,4 @@
-var _secretKey = "WeD0n'tL1keSpamBots";
+var _secretKey = "WeD0n'tL1keSp4mB0ts!";
 
 function encrypt(plainText) {
     var cipherText = simpleCrypto.encrypt(plainText);
@@ -19,7 +19,7 @@ if (typeof require !== 'undefined') {
         if (process.argv.length < 3)
             console.log('Error: Call with string to encrypt as first argument!\nnode mailcrypt.js "somestring"');
         else {
-            const crypto = require('../../node_modules/simple-crypto-js/build/SimpleCrypto');
+            const crypto = require('../../node_modules/simple-crypto-js/lib/SimpleCrypto');
             var simpleCrypto = new crypto.SimpleCrypto(_secretKey);
             encrypt(process.argv[2]);
         }
