@@ -11,11 +11,13 @@
     <address class="pb-5">
       <div>
         <i class="fas fa-phone"></i>
-        <script>document.writeln(decrypt('{{ $config.telephone }}'));</script>
+        <a class="text-body" href="javascript:openCryptPhoneLink('{{ $config.telephone }}');">
+          <script>document.writeln(decrypt('{{ $config.telephone }}'));</script>
+        </a>
       </div>
       <div>
         <i class="fas fa-envelope"></i>
-        <a class="text-body" href="javascript:openCryptLink('{{ $config.email }}');">
+        <a class="text-body" href="javascript:openCryptMailLink('{{ $config.email }}');">
           <script>document.writeln(decrypt('{{ $config.email }}'));</script>
         </a>
       </div>

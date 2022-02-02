@@ -10,8 +10,12 @@ function decrypt(cipherText) {
     return decipherText;
 }
 
-function openCryptLink(cryptmail) {
+function openCryptMailLink(cryptmail) {
     location.href = 'mailto:' + decrypt(cryptmail);
+}
+
+function openCryptPhoneLink(cryptphone) {
+    location.href = 'tel:' + decrypt(cryptphone);
 }
 
 if (typeof require !== 'undefined') {
