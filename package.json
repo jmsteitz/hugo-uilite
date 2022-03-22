@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jmsteitz/hugo-uilite#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.1.0",
     "bootstrap": "^5.1.3",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
