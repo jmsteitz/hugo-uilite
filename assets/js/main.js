@@ -93,17 +93,16 @@ $('.js-cite-modal').click(function(e) {
 // Copy citation text on 'Copy' click.
 $('.js-copy-cite').click(function(e) {
   e.preventDefault();
-  // Get selection.
-  let range = document.createRange();
-  let code_node = document.querySelector('#modal .modal-body');
-  range.selectNode(code_node);
-  window.getSelection().addRange(range);
+  let code_node = e.currentTarget.closest('.modal-content').querySelector('.modal-body code');
+  let text = code_node.textContent;
+  let copyToast = e.currentTarget.closest('.modal').querySelector('.toast');
+  let toast = new bootstrap.Toast(copyToast);
   try {
-    // Execute the copy command.
-    document.execCommand('copy');
+    // Write text to clipboard
+    navigator.clipboard.writeText(text);
+    // Show info toast
+    toast.show()
   } catch(e) {
     console.log('Error: citation copy failed.');
   }
-  // Remove selection.
-  window.getSelection().removeRange(range);
 });

@@ -1,12 +1,10 @@
 <!-- Citation modal -->
-<div id="modal" class="modal fade" role="dialog">
+<div id="modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Citation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <pre><code class="tex hljs"></code></pre>
@@ -19,6 +17,15 @@
           <i class="fas fa-download"></i> Download
         </a>
         <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-absolute p-3 bottom-0 end-0">
+    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+      <div class="d-flex">
+        <div class="toast-body">
+          Citation copied to clipboard.
+        </div>
       </div>
     </div>
   </div>
