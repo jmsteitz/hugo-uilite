@@ -52,7 +52,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(elements[i]).addClass("bs");
     }, time);
-    time += 310;
+    time += 20;
   };
 
   setTimeout(function() {
