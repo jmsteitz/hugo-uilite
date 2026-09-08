@@ -1,6 +1,6 @@
 {{ define "content" }}
 
-{{ $projects := .Site.Data.projects }}
+{{ $projects := hugo.Data.projects }}
 {{ $items_type := $projects.page_type | default "projects" }}
 {{ $query := where site.RegularPages "Type" $items_type }}
 

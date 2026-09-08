@@ -1,4 +1,4 @@
-{{ $publications := .Site.Data.publications }}
+{{ $publications := hugo.Data.publications }}
 
 {{ $items_type := $publications.page_type | default "publications" }}
 {{ $items_count := $publications.count | default 65535 }}

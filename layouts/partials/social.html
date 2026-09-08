@@ -1,4 +1,4 @@
-{{ $social := .Site.Data.social }}
+{{ $social := hugo.Data.social }}
 
 {{ range $key, $value := $social.brands }}
   <a target="_blank" href="{{ $value }}" {{ if not $.IsHome }}class="nav-link text-dark"{{ end }}>

@@ -1,10 +1,10 @@
 {{ define "content" }}
 
 <div class="main-content">
-	{{ if .Site.Data.skills.active }}{{ partial "skills.html" . }}{{ end }}
-	{{ if .Site.Data.experience.active }}{{ partial "experience.html" . }}{{ end }}
-	{{ if .Site.Data.services.active }}{{ partial "services.html" . }}{{ end }}
-	{{ if .Site.Data.publications.active }}{{ partial "publications.html" . }}{{ end }}
+	{{ if hugo.Data.skills.active }}{{ partial "skills.html" . }}{{ end }}
+	{{ if hugo.Data.experience.active }}{{ partial "experience.html" . }}{{ end }}
+	{{ if hugo.Data.services.active }}{{ partial "services.html" . }}{{ end }}
+	{{ if hugo.Data.publications.active }}{{ partial "publications.html" . }}{{ end }}
 </div>
 
 <div style="z-index: 4; position: relative;">

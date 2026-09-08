@@ -10,7 +10,7 @@
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}">
 <!-- Open Graph - Article -->
-<meta name="article:author" content="{{ .Site.Data.config.author }}">
+<meta name="article:author" content="{{ hugo.Data.config.author }}">
 
 <!-- JSON-LD -->
 {{ if .IsHome }}
@@ -22,9 +22,9 @@
     "name": "{{ .Site.Title }}",
     "author": {
         "@type": "Person",
-        "name": "{{ .Site.Data.config.author }}"
+        "name": "{{ hugo.Data.config.author }}"
     },
-    "description": "{{ .Site.Data.config.description }}",
+    "description": "{{ hugo.Data.config.description }}",
 }
 </script>
 {{ end }}
@@ -41,7 +41,7 @@
     "name" : "{{ .Title }}",
     "headline" : "{{ .Title }}",
     "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
-    "inLanguage" : "{{ .Site.LanguageCode }}",
+    "inLanguage" : "{{ .Site.Language.Locale }}",
     "author" : "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",
     "creator" : "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",
     "publisher": "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",

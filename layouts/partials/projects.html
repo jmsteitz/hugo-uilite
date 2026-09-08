@@ -1,4 +1,4 @@
-{{ $projects := .Site.Data.projects }}
+{{ $projects := hugo.Data.projects }}
 
 {{ $items_type := $projects.page_type | default "projects" }}
 {{ $items_count := $projects.count | default 65535 }}
