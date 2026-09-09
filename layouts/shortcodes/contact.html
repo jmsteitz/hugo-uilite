@@ -2,10 +2,10 @@
 
 <address>
 {{ $config.author }}
-{{/* <script>document.writeln(decrypt('{{ $config.address }}'));</script> */}}
+{{/* <span data-crypt="{{ $config.address }}"></span> */}}
 </address>
 
 <address>
-T: &nbsp;&nbsp;<script>document.writeln(decrypt('{{ $config.telephone }}'));</script><br>
-M: &nbsp;<a class="text-body text-decoration-none" href="javascript:openCryptLink('{{ $config.email }}');"><script>document.writeln(decrypt('{{ $config.email }}'));</script></a>
+T: &nbsp;&nbsp;<span data-crypt="{{ $config.telephone }}"><span class="text-muted">JavaScript required</span></span><br>
+M: &nbsp;<a class="text-body text-decoration-none" data-crypt="{{ $config.email }}" data-crypt-scheme="mailto"><span class="text-muted">JavaScript required</span></a>
 </address>

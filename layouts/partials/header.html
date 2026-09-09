@@ -26,7 +26,5 @@
 
 {{ partial "seo_schema.html" . }}
 
-{{ $crypto := resources.Get "vendor/js/SimpleCrypto.min.js" }}
-{{ $mail := resources.Get "js/mailcrypt.js" | minify | fingerprint }}
-{{ $js := slice $crypto $mail | resources.Concat "js/head.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}"></script>
+{{ $mailcrypt := resources.Get "js/mailcrypt.js" | minify | fingerprint }}
+<script defer src="{{ $mailcrypt.RelPermalink }}"></script>

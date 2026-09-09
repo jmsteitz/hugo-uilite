@@ -35,7 +35,7 @@ menuBtn.click(function() {
   }
 });
 
-function scrollTo(target) {
+function scrollToHash(target) {
   const top = $(target).offset().top;
   const duration = 500;
   const changeHash = function() {
@@ -62,14 +62,13 @@ $(document).ready(function() {
   $("#sidebar a.btn[href='#contact']").on("click", function (event) {
     event.preventDefault();
 
-    scrollTo($.attr(this, "href"));
+    scrollToHash($.attr(this, "href"));
   });
 
   $("#top-btn").on("click", function (event) {
     event.preventDefault();
-    $('body,html').animate({
-        scrollTop: 0
-    }, 500, function() { location.hash = ''; });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    location.hash = '';
   });
 });
 

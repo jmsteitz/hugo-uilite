@@ -4,21 +4,19 @@
   <div class="container pt-md-5 px-0">
     <h2 class="heading py-4">Contact</h2>
 
-    {{/* <address>
-      <script>document.writeln(decrypt('{{ $config.address }}'));</script>
-    </address> */}}
+    {{/* <address data-crypt="{{ $config.address }}"></address> */}}
 
     <address class="pb-5">
       <div>
         <i class="fas fa-phone"></i>
-        <a class="text-body" href="javascript:openCryptPhoneLink('{{ $config.telephone }}');">
-          <script>document.writeln(decrypt('{{ $config.telephone }}'));</script>
+        <a class="text-body" data-crypt="{{ $config.telephone }}" data-crypt-scheme="tel">
+          <span class="text-muted">JavaScript required</span>
         </a>
       </div>
       <div>
         <i class="fas fa-envelope"></i>
-        <a class="text-body" href="javascript:openCryptMailLink('{{ $config.email }}');">
-          <script>document.writeln(decrypt('{{ $config.email }}'));</script>
+        <a class="text-body" data-crypt="{{ $config.email }}" data-crypt-scheme="mailto">
+          <span class="text-muted">JavaScript required</span>
         </a>
       </div>
       <div>
